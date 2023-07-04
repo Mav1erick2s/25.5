@@ -13,7 +13,6 @@ def driver(request):
 
     yield
 
-
     driver.quit()
 
 class TestUI:
