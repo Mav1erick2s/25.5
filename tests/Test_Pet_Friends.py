@@ -13,7 +13,7 @@ def driver(request):
 
     yield
 
-    driver.quit()
+    #driver.quit()
 
 class TestUI:
     def test_show_all_pets(self):
@@ -25,6 +25,7 @@ class TestUI:
         self.driver.find_element(By.ID, 'pass').send_keys('karamelkinnaprieme')
         # Нажимаем на кнопку входа в аккаунт
         self.driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
+        self.driver.find_element(By.CSS_SELECTOR, 'span[id="form-error-message",data-error="Неверный логин или пароль"]').click()
         # Проверяем, что мы оказались на главной странице пользователя
         assert self.driver.find_element(By.TAG_NAME, 'h1').text == "PetFriends"
 
